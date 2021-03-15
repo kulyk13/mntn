@@ -1,0 +1,362 @@
+/* ============ FONTS START ============ */
+/* latin */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy Medium"), local("Gilroy-Medium"),
+    url("../fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+/* latin */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy Bold"), local("Gilroy-Bold"),
+    url("../fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/* latin */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy Extrabold"), local("Gilroy-Extrabold"),
+    url("../fonts/Gilroy-Extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chronicle Display";
+  src: local("Chronicle Display Semibold"), local("Chronicle-Display-Semibold"),
+    url("../fonts/Chronicle-Display-Semibold.otf") format("otf");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chronicle Display";
+  src: local("Chronicle Display Bold"), local("Chronicle-Display-Bold"),
+    url("../fonts/Chronicle-Display-Bold.otf") format("otf");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+/* ============ FONTS END ============ */
+
+/* ============ CSS RESET START ============ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+     v2.0 | 20110126
+     License: none (public domain)
+  */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* ============ CSS RESET END ============ */
+
+/* ============ COMMON STYLES START ============ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a,
+span,
+::before,
+::after {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: "Gilroy", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.wide-container {
+  max-width: 1790px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container {
+  max-width: 1490px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* ============ COMMON STYLES END ============ */
+.hero-section {
+  background: linear-gradient(
+      330.24deg,
+      rgba(11, 29, 38, 0) 31.06%,
+      #0b1d26 108.93%
+    ),
+    url("../img/full-bg.webp") no-repeat 50% 0 / 1886px;
+  padding-bottom: 843px;
+}
+.header {
+  padding-top: 50px;
+}
+.header a {
+  padding: 10px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: "Chronicle Display", serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-left: -10px;
+}
+.menu {
+  display: flex;
+}
+.menu li:nth-child(n + 2) {
+  margin-left: 20px;
+}
+.account {
+  margin-right: -10px;
+  column-gap: 10px;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 200px;
+}
+.social-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -25px;
+}
+.social-block p {
+  transform: rotateZ(90deg);
+  width: 77px;
+  margin-bottom: 45px;
+}
+.social-networks li:nth-child(n + 2) {
+  margin-top: 10px;
+}
+.social-networks a {
+  padding: 10px;
+  font-size: 24px;
+  row-gap: 30px;
+}
+.offer {
+  padding: 0 418px;
+}
+.offer p {
+  display: inline-flex;
+  align-items: center;
+  color: #fbd784;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.offer p::before {
+  content: "";
+  width: 72px;
+  height: 2px;
+  background-color: #fbd784;
+  margin-right: 30px;
+}
+h1 {
+  font-family: "Chronicle Display", serif;
+  font-weight: 600;
+  font-size: 88px;
+  text-transform: capitalize;
+  padding: 30px 0;
+}
+.slider {
+  position: fixed;
+  display: flex;
+  right: 30px;
+  align-items: center;
+}
+.pages {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+  row-gap: 40px;
+  margin-right: 30px;
+}
+.slider::after {
+  content: "";
+  width: 3px;
+  height: 240px;
+  background-color: #fff;
+  opacity: 0.5;
+}
+.info-block {
+  background-color: #0b1d26;
+}
+.info-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info-slide:nth-child(odd) {
+  padding-left: 150px;
+}
+.info-slide img {
+  width: 566px;
+  height: 720px;
+  object-fit: cover;
+}
+.info-slide:nth-child(odd) > img {
+  order: 1;
+}
+.info-slide__content {
+  position: relative;
+  width: 49%;
+}
+.info-slide__content:nth-child(even) {
+  width: 41%;
+}
+.info-slide__content p:first-child {
+  text-transform: uppercase;
+  color: #fbd784;
+}
+.info-slide__content p:last-of-type {
+  font-weight: 700;
+}
+.info-slide__content::before {
+  content: "01";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 240px;
+  opacity: 0.1;
+}
