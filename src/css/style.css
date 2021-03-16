@@ -376,6 +376,8 @@ h1 {
   width: 566px;
   height: 720px;
   object-fit: cover;
+}
+.info-slide:first-child > img {
   margin-top: -250px;
 }
 .info-slide:nth-child(odd) > img {
