@@ -181,6 +181,10 @@ table {
 ::after {
   box-sizing: border-box;
 }
+::selection {
+  background-color: #fbd784;
+  color: #000;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -202,13 +206,23 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 18px;
   font-weight: 700;
+  background-color: var(--bg-color);
   color: #fff;
+}
+a {
+  color: #fff;
+  padding: 10px;
+  transition: .3s;
+}
+a:hover {
+  color: var(--brand-color);
 }
 .wide-container {
   max-width: 1790px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+  position: relative;
 }
 .container {
   max-width: 1490px;
@@ -216,27 +230,30 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+.small-title {
+  display: inline-flex;
+  align-items: center;
+  color: var(--brand-color);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+.small-title::before {
+  content: "";
+  width: 72px;
+  height: 2px;
+  background-color: var(--brand-color);
+  margin-right: 30px;
+}
 /* ============ COMMON STYLES END ============ */
 
-/* ============ HERO START ============ */
-.hero-section {
-  background: linear-gradient(
-    344.24deg,
-    rgba(11, 29, 38, 0) 49.06%,
-    var(--bg-color) 113.93%
-  ),linear-gradient(180deg, rgba(11, 29, 38, 0) 58%, var(--bg-color) 96.38%),
-  url("../img/full-bg.webp") no-repeat 50% 0;
-  padding-bottom: 1110px;
-}
-.hero-section a {
-  padding: 10px;
-  transition: .3s;
-}
-.hero-section a:hover {
-  color: var(--brand-color);
-}
+/* ============ HEADER START ============ */
 .header {
   padding-top: 50px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
 }
 .nav {
   display: flex;
@@ -260,32 +277,48 @@ body {
   margin-right: -10px;
   column-gap: 10px;
 }
+/* ============ HEADER END ============ */
+
+/* ============ HERO START ============ */
+.hero-section {
+  background: linear-gradient(
+    344.24deg,
+    rgba(11, 29, 38, 0) 49.06%,
+    var(--bg-color) 108.93%
+  ),linear-gradient(180deg, rgba(11, 29, 38, 0) 58%, var(--bg-color) 86.38%),
+  url("../img/full-bg.webp") no-repeat 50% / cover;
+  padding-bottom: 1110px;
+}
+.hero-section a {
+  padding: 10px;
+  transition: .3s;
+}
+.hero-section a:hover {
+  color: var(--brand-color);
+}
 .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 200px;
+  padding-top: 290px;
 }
 .social-block {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-left: -25px;
-  margin-bottom: -70px;
-}
-.social-block p {
   transform: rotateZ(90deg);
-  width: 77px;
-  margin-bottom: 45px;
+  margin-left: -77px;
 }
-.social-networks li:nth-child(n + 2) {
-  margin-top: 10px;
+.social-networks {
+  display: flex;
+  margin-left: 15px;
 }
 .social-networks a {
   padding: 10px;
   font-size: 24px;
-  row-gap: 30px;
-  transition: .3s;
+  transform: rotateZ(-90deg);
+}
+.social-networks li:nth-child(n + 2) {
+  margin-left: 10px;
 }
 .social-networks a:hover {
   color: var(--brand-color);
@@ -293,20 +326,6 @@ body {
 .offer {
   width: 871px;
   margin: 0 auto;
-}
-.offer p {
-  display: inline-flex;
-  align-items: center;
-  color: var(--brand-color);
-  letter-spacing: 6px;
-  text-transform: uppercase;
-}
-.offer p::before {
-  content: "";
-  width: 72px;
-  height: 2px;
-  background-color: var(--brand-color);
-  margin-right: 30px;
 }
 h1 {
   font-family: "Chronicle Display", serif;
@@ -323,9 +342,7 @@ h1 {
   font-size: 30px;
 }
 .slider {
-  position: fixed;
   display: flex;
-  right: 30px;
   align-items: center;
 }
 .pages {
@@ -356,10 +373,8 @@ h1 {
 
 /* ============ INFO BLOCK START ============ */
 .info-block {
-  background-color: var(--bg-color);
-}
-.info-slide__wrap {
-  background-color: transparent;
+  padding-bottom: 100px;
+  margin-top: -380px;
 }
 .info-slide {
   display: flex;
@@ -369,66 +384,57 @@ h1 {
 .info-slide:nth-child(odd) {
   padding-left: 150px;
 }
-.info-slide:nth-last-child(n + 2) {
-  margin-bottom: 200px;
+.info-slide:nth-child(n + 2) {
+  margin-top: 200px;
 }
 .info-slide img {
   width: 566px;
   height: 720px;
   object-fit: cover;
 }
-.info-slide:first-child > img {
-  margin-top: -250px;
-}
 .info-slide:nth-child(odd) > img {
   order: 1;
 }
-.info-slide__content {
+.info-slide-content {
   position: relative;
   width: 49%;
-  margin-top: -250px;
 }
-.info-slide__content::before {
-  content: "01";
+.info-slide-content::before {
+  content: attr(data-num);
   position: absolute;
-  left: -150px;
-  top: -110px;
+  left: 0;
+  top: 0;
   font-size: 240px;
   opacity: 0.1;
+  transform: translate(calc(-50% - 28px), calc(-50% + 10px));
 }
-.info-slide__content:nth-child(even) {
+.info-slide-content:nth-child(even) {
   width: 41%;
 }
-.info-slide__content p:first-child {
-  display: inline-flex;
-  align-items: center;
-  text-transform: uppercase;
-  color: var(--brand-color);
-  letter-spacing: 6px;
+.info-slide-content * {
+  margin-top: 30px;
 }
-.info-slide__content p:first-child::before {
-  content: "";
-  width: 72px;
-  height: 2px;
-  background-color: var(--brand-color);
-  margin-right: 24px;
+.info-slide-content *:first-child {
+  margin-top: 0;
 }
-.info-slide__content h2 {
+.info-slide-content h3 {
   font-family: "Chronicle Display", serif;
   font-size: 64px;
   font-weight: 500;
-  margin: 30px 0;
 }
-.info-slide__content p:last-of-type {
+.info-slide-content p {
   font-weight: 700;
   line-height: 1.77;
 }
-.info-slide__content a {
-  margin-top: 30px;
+.info-slide-content a {
   color: var(--brand-color);
   align-items: center;
+  margin-left: -10px;
 }
-.info-slide__content span {
+.info-slide-content a:hover {
+  color: #fff;
+}
+.info-slide-content span {
   font-size: 29px;
   margin-left: 16px;
 }
@@ -436,9 +442,8 @@ h1 {
 
 /* ============ FOOTER START ============ */
 .footer {
-  padding-top: 200px;
+  padding-top: 100px;
   padding-bottom: 120px;
-  background-color: var(--bg-color);
   line-height: 1.77;
 }
 .footer a {
@@ -449,7 +454,7 @@ h1 {
 .footer a:hover {
   color: var(--brand-color);
 }
-.footer__offer {
+.footer-offer {
   width: 300px;  
 }
 .footer .logo {
@@ -466,14 +471,14 @@ h1 {
   justify-content: space-between;
   position: relative;
 }
-.info-links__wrap {
+.info-links-wrap {
   display: flex;
   column-gap: 210px;
 }
-.info-links__list ul {
+.info-links-list ul {
   font-weight: 500;
 }
-.info-links__list li:nth-of-type(n + 2) {
+.info-links-list li:nth-of-type(n + 2) {
   margin-top: 5px;
 }
 .copyright {
