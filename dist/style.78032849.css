@@ -3,7 +3,7 @@
 @font-face {
   font-family: "Gilroy";
   src: local("Gilroy Medium"), local("Gilroy-Medium"),
-    url("../fonts/Gilroy-Medium.woff2") format("woff2");
+    url("/Gilroy-Medium.b6bbbf49.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -12,7 +12,7 @@
 @font-face {
   font-family: "Gilroy";
   src: local("Gilroy Bold"), local("Gilroy-Bold"),
-    url("../fonts/Gilroy-Bold.woff2") format("woff2");
+    url("/Gilroy-Bold.c03c994f.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -21,7 +21,7 @@
 @font-face {
   font-family: "Gilroy";
   src: local("Gilroy Extrabold"), local("Gilroy-Extrabold"),
-    url("../fonts/Gilroy-Extrabold.woff2") format("woff2");
+    url("/Gilroy-Extrabold.f41f21e9.woff2") format("woff2");
   font-weight: 800;
   font-display: swap;
   font-style: normal;
@@ -29,7 +29,7 @@
 @font-face {
   font-family: "Chronicle Display";
   src: local("Chronicle Display Semibold"), local("Chronicle-Display-Semibold"),
-    url("../fonts/Chronicle-Display-Semibold.otf") format("otf");
+    url("/Chronicle-Display-Semibold.2493ea65.otf") format("otf");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -37,7 +37,7 @@
 @font-face {
   font-family: "Chronicle Display";
   src: local("Chronicle Display Bold"), local("Chronicle-Display-Bold"),
-    url("../fonts/Chronicle-Display-Bold.otf") format("otf");
+    url("/Chronicle-Display-Bold.f9ae8770.otf") format("otf");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -286,7 +286,7 @@ a:hover {
     rgba(11, 29, 38, 0) 49.06%,
     var(--bg-color) 108.93%
   ),linear-gradient(180deg, rgba(11, 29, 38, 0) 58%, var(--bg-color) 86.38%),
-  url("../img/full-bg.webp") no-repeat 50% / cover;
+  url("/full-bg.d1042387.webp") no-repeat 50% / cover;
   padding-bottom: 1110px;
 }
 .hero-section a {
@@ -505,3 +505,5 @@ a:hover {
   margin: 0 5px;
 }
 /* ============ FOOTER END ============ */
+
+/*# sourceMappingURL=/style.78032849.css.map */
