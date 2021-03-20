@@ -10,24 +10,24 @@ import SwiperCore, {Pagination} from 'swiper/core';
 // configure Swiper to use modules
 SwiperCore.use([Pagination]);
 
-const swiper = new Swiper('.offer-slider', {
-    loop: true,
-    slidesPerView: 1,
-    direction: 'vertical',
-    speed: 400,
-    spaceBetween: 100,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'custom',
-      clickable: true,
-    },
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      draggable: true,
-      dragSize: 25,
-    },
-    renderCustom: function (swiper, current, total) {
-      return current + ' of ' + total;
-    }
-});
+const slides = ['Start', '01', '02', '03']
 
+const swiper = new Swiper('.offer-slider', {
+  direction: 'vertical',
+  speed: 400,
+  spaceBetween: 100,
+  pagination: {
+    el: '.swiper-pagination',
+		clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (slides[index++]) + '</span>';
+    }
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+    hide: false,
+    snapOnRelease: true,
+    dragSize: 60,
+  }, 
+});

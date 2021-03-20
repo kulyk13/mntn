@@ -1,0 +1,31 @@
+var _swiper = require('swiper');
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _swiperDefault = _parcelHelpers.interopDefault(_swiper);
+require('swiper/swiper-bundle.css');
+var _swiperCore = require('swiper/core');
+var _swiperCoreDefault = _parcelHelpers.interopDefault(_swiperCore);
+// configure Swiper to use modules
+_swiperCoreDefault.default.use([_swiperCore.Pagination]);
+const slides = ['Slide 1', 'Slide 2', 'Slide 3'];
+const swiper = new _swiperDefault.default('.offer-slider', {
+  slidesPerView: 1,
+  loop: false,
+  centeredSlides: true,
+  direction: 'vertical',
+  speed: 400,
+  spaceBetween: 100,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + menu[index] + '</span>';
+    }
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+    dragSize: 25,
+    hide: false,
+    snapOnRelease: true
+  }
+});

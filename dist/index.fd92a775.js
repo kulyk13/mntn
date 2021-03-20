@@ -450,24 +450,24 @@ var _swiperCore = require('swiper/core');
 var _swiperCoreDefault = _parcelHelpers.interopDefault(_swiperCore);
 // configure Swiper to use modules
 _swiperCoreDefault.default.use([_swiperCore.Pagination]);
+const slides = ['Start', '01', '02', '03'];
 const swiper = new _swiperDefault.default('.offer-slider', {
-  loop: true,
-  slidesPerView: 1,
   direction: 'vertical',
   speed: 400,
   spaceBetween: 100,
   pagination: {
     el: '.swiper-pagination',
-    type: 'custom',
-    clickable: true
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + slides[index++] + '</span>';
+    }
   },
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
-    dragSize: 25
-  },
-  renderCustom: function (swiper, current, total) {
-    return current + ' of ' + total;
+    hide: false,
+    snapOnRelease: true,
+    dragSize: 60
   }
 });
 
