@@ -5,10 +5,10 @@ import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
 
 // core version + navigation, pagination modules
-import SwiperCore, {Pagination} from 'swiper/core';
+import SwiperCore, {Pagination, Scrollbar} from 'swiper/core';
 
 // configure Swiper to use modules
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Scrollbar]);
 
 const slides = ['Start', '01', '02', '03']
 
@@ -26,8 +26,6 @@ const swiper = new Swiper('.offer-slider', {
   scrollbar: {
     el: '.swiper-scrollbar',
     draggable: true,
-    hide: false,
-    snapOnRelease: true,
     dragSize: 60,
   }, 
 });
